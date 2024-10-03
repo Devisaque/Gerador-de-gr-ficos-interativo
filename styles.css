@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
+/* Estilizando o corpo da página com uma fonte, margens e alinhamento central */
+body {
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
+    margin: 0; /* Removendo margens padrão */
+    padding: 20px; /* Espaçamento interno */
+    display: flex; /* Usando flexbox para layout */
+    flex-direction: column; /* Organizando os itens em coluna */
+    align-items: center; /* Centralizando itens horizontalmente */
+    background-color: #f3f0ff; /* Fundo lilás claro */
+}
+
+/* Estilizando o cabeçalho principal */
+h1 {
+    font-size: 28px; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+    font-weight: 700; /* Negrito */
+    color: #6f2c91; /* Roxo escuro */
+    animation: fadeIn 1s ease; /* Animação ao carregar */
+}
+
+/* Estilizando o contêiner de controles */
+.controls {
+    display: flex; /* Usando flexbox */
+    flex-direction: column; /* Organizando em coluna */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    width: 100%; /* Largura total */
+    max-width: 400px; /* Largura máxima */
+}
+
+/* Estilizando contêineres de formulários */
+.form-container {
+    margin: 10px 0; /* Margens superior e inferior */
+}
+
+/* Estilizando campos de entrada, seletores e botões */
+input, select, button {
+    padding: 10px; /* Espaçamento interno */
+    margin: 5px 0; /* Margens verticais */
+    border: 2px solid #6f2c91; /* Borda roxa escura */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: all 0.3s ease; /* Transição suave para todos os estados */
+    outline: none; /* Removendo contorno padrão */
+}
+
+/* Estilizando o foco em campos de entrada e seletores */
+input:focus, select:focus {
+    border-color: #a67bba; /* Borda roxa clara ao focar */
+    box-shadow: 0 0 5px rgba(167, 123, 186, 0.5); /* Sombra ao redor */
+}
+
+/* Estilizando botões */
+button {
+    background-color: #a67bba; /* Fundo roxo claro */
+    color: white; /* Texto branco */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para efeitos de hover */
+}
+
+/* Estilizando o hover nos botões */
+button:hover {
+    background-color: #6f2c91; /* Fundo roxo escuro ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+}
+
+/* Estilizando o canvas onde o gráfico é desenhado */
+canvas {
+    max-width: 90%; /* Largura máxima */
+    max-height: 300px; /* Altura máxima */
+    border: 2px solid #6f2c91; /* Borda roxa escura */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    animation: zoomIn 0.5s ease; /* Animação ao carregar */
+}
+
+/* Estilizando o status do gráfico */
+#chart-status {
+    margin-top: 10px; /* Margem superior */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #6f2c91; /* Roxo escuro */
+    animation: slideIn 0.5s ease; /* Animação de entrada */
+    font-weight: bold; /* Negrito */
+}
+
+/* Definindo animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Começa invisível */
+    }
+    to {
+        opacity: 1; /* Termina visível */
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0); /* Começa pequeno */
+    }
+    to {
+        transform: scale(1); /* Termina em tamanho normal */
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* Começa um pouco acima */
+        opacity: 0; /* Começa invisível */
+    }
+    to {
+        transform: translateY(0); /* Termina na posição original */
+        opacity: 1; /* Termina visível */
+    }
+}
+
+/* Estilizando para dispositivos com tela pequena */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 22px; /* Tamanho da fonte reduzido */
+    }
+
+    input, select, button {
+        font-size: 14px; /* Tamanho da fonte reduzido */
+    }
+}

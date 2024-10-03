@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Gráficos Interativo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gerador de Gráficos Interativo</h1>
+
+    <div class="controls">
+        <div class="form-container">
+            <input type="text" id="graph-title" placeholder="Título do Gráfico" value="Meu Gráfico">
+            <select id="chart-type">
+                <option value="bar">Barras</option>
+                <option value="pie">Pizza</option>
+                <option value="line">Linha</option>
+                <option value="radar">Radar</option>
+                <option value="polarArea">Área Polar</option>
+            </select>
+            <input type="text" id="data-values" placeholder="Valores dos Dados" value="10, 20, 30, 40">
+        </div>
+        <button onclick="updateChart()">Atualizar Gráfico</button>
+    </div>
+
+    <canvas id="myCanvas"></canvas>
+    
+    <div class="form-container">
+        <button onclick="addText()">Adicionar Texto</button>
+        <button onclick="addRectangle()">Adicionar Retângulo</button>
+        <button onclick="addCircle()">Adicionar Círculo</button>
+    </div>
+
+    <div class="form-container">
+        <button onclick="zoomIn()">Aproximar Zoom</button>
+        <button onclick="zoomOut()">Afastar Zoom</button>
+        <button onclick="rotateShapes()">Rotacionar</button>
+    </div>
+
+    <div class="form-container">
+        <select id="download-format">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+        </select>
+        <button id="download-btn">Baixar Gráfico</button>
+    </div>
+
+    <div id="chart-status"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
